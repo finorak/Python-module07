@@ -1,3 +1,4 @@
+from typing import Union
 from .Card import Card
 
 
@@ -13,7 +14,7 @@ class CreatureCard(Card):
         self.playable = True
 
     def play(self, game_state: dict) -> dict:
-        play_result = {}
+        play_result: dict[str, Union[str, int]] = {}
         mana_temp = self.mana
         if not self.is_playable(self.mana):
             self.playable = False
@@ -27,7 +28,7 @@ class CreatureCard(Card):
         return play_result
 
     def attack_target(self, target: str) -> None:
-        result = {}
+        result: dict[str, Union[str, bool, int]] = {}
         result['attacker'] = self.name
         result['target'] = target
         result['damage_dealt'] = 7
@@ -45,7 +46,7 @@ class CreatureCard(Card):
             return False
 
     def get_card_info(self) -> dict:
-        creature_info = {}
+        creature_info: dict[str, Union[str, int]] = {}
         creature_info['name'] = self.name
         creature_info['cost'] = self.cost
         creature_info['rarity'] = self.rarity
@@ -53,6 +54,3 @@ class CreatureCard(Card):
         creature_info['attack'] = self.attack
         creature_info['health'] = self.health
         return creature_info
-
-    
-

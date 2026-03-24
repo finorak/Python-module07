@@ -22,4 +22,3 @@ class Card(ABC):
     @abstractmethod
     def is_playable(self, available_mana: int) -> bool:
         return True
-

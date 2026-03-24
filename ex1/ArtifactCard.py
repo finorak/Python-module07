@@ -1,3 +1,4 @@
+from typing import Any, Union
 from ex0.Card import Card
 
 
@@ -14,14 +15,13 @@ class ArtifactCard(Card):
 
     def play(self, game_state: dict) -> dict:
         try:
-            result = {}
+            result: dict[str, Union[str, int]] = {}
             if not self.is_playable(self.mana):
                 self.playable = False
                 print("Playable", self.playable)
                 return {}
             print("Playable", self.playable)
             self.mana -= 5
-            self.result = {}
             result['card_played'] = self.name
             result['mana_used'] = self.cost
             result['effect'] = self.effect
@@ -31,9 +31,9 @@ class ArtifactCard(Card):
             return {}
 
     def activate_ability(self) -> dict:
-        activity = {}
+        activity: dict[str, Any] = {}
         return activity
-    
+
     def is_playable(self, available_mana: int) -> bool:
         try:
             if available_mana - 5 < 0:
@@ -44,7 +44,7 @@ class ArtifactCard(Card):
             return False
 
     def get_card_info(self) -> dict:
-        creature_info = {}
+        creature_info: dict[str, Union[str, int]] = {}
         creature_info['name'] = self.name
         creature_info['cost'] = self.cost
         creature_info['rarity'] = self.rarity

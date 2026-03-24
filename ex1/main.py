@@ -10,8 +10,9 @@ def main() -> None:
     bolt = SpellCard("Lightning Bolt", 3, "rare", "Deal 3 damage to target")
     crystal = ArtifactCard("Mana Crystal", 2, "rare",
                            "Permanent: +1 mana per turn")
-    dragon = CreatureCard("Fire Dragon", 5, "rare", 1, 5,
-                           "Creature summoned to battlefield")
+    dragon = CreatureCard(
+            "Fire Dragon", 5, "rare", 1, 5,
+            "Creature summoned to battlefield")
     deck.add_card(bolt)
     deck.add_card(crystal)
     deck.add_card(dragon)

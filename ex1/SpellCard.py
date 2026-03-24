@@ -1,3 +1,4 @@
+from typing import Any, Union
 from ex0.Card import Card
 
 
@@ -18,7 +19,7 @@ class SpellCard(Card):
         try:
             print("Playable", self.is_playable(self.mana))
             self.durability -= 1
-            self.result = {}
+            self.result: dict[str, Union[str, int]] = {}
             self.result['card_played'] = self.name
             self.result['mana_used'] = self.cost
             self.result['effect'] = self.effect_type
@@ -28,9 +29,9 @@ class SpellCard(Card):
             return {}
 
     def activate_ability(self) -> dict:
-        ability = {}
+        ability: dict[str, Any] = {}
         return ability
-    
+
     def is_playable(self, available_mana: int) -> bool:
         try:
             if available_mana - 5 < 0:
@@ -41,11 +42,12 @@ class SpellCard(Card):
             return False
 
     def get_card_info(self) -> dict:
-        creature_info = {}
+        creature_info: dict[str, Any] = {}
         creature_info['name'] = self.name
         creature_info['cost'] = self.cost
         creature_info['rarity'] = self.rarity
         return creature_info
 
     def resolve_effect(self, target: str) -> dict:
-        ...
+        effect_info: dict[str, Any] = {}
+        return effect_info

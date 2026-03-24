@@ -30,7 +30,7 @@ class Deck:
         return card
 
     def get_deck_stats(self) -> dict:
-        stats = {}
+        stats: dict[str, Any] = {}
         cards_len = self.ft_len(self.cards)
         if cards_len < 0:
             return stats
@@ -47,7 +47,7 @@ class Deck:
             return stats
 
     def get_count(self) -> dict:
-        count_list = {}
+        count_list: dict[str, int] = {}
         for card in self.cards:
             if card.type == 'Creature':
                 if 'creature_count' in count_list:
