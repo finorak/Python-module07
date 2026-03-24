@@ -1,12 +1,27 @@
-from ex0 import CreatureCard
+from . import CreatureCard
 
 
-if __name__ == "__main__":
+def main() -> None:
     fire_dragon_name = "Fire Dragon"
-    fire_dragon = CreatureCard(fire_dragon_name, 5, "Legendary", 7, 5)
+    fire_dragon = CreatureCard(fire_dragon_name, 5, "Legendary",
+                               1, 5, "Creature summoned to battlefield")
     print("=== DataDeck Card Foundation ===")
     print("\nTesting Abstract Base Class Design:\n")
     print("CreatureCard Info:")
     fire_dragon_info = fire_dragon.get_card_info()
     print(fire_dragon_info)
+    print()
+    print(f"Playing {fire_dragon.name} with {fire_dragon.mana} available")
+    play_result = fire_dragon.play({})
+    print(f"Play result: {play_result}\n")
+    fire_dragon.attack_target("Goblin Warrior")
+    print()
+    fire_dragon.mana = 3
+    print(f"Testing insufficient mana ({fire_dragon.mana} available)")
+    print(f"Playable: {fire_dragon.is_playable(fire_dragon.mana)}")
+    print()
+
+
+if __name__ == "__main__":
+    main()
     print("Abstract pattern successfully demonstrated!")
