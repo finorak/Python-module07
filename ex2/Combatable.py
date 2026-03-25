@@ -6,7 +6,7 @@ class Combatable(ABC):
         super().__init__()
 
     @abstractmethod
-    def attack(self, target: list) -> dict:
+    def attack(self, target: str) -> dict:
         ...
 
     @abstractmethod

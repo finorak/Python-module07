@@ -7,7 +7,7 @@ class Magical(ABC):
 
     @abstractmethod
     def cast_spell(self, spell_name: str,
-                   target: list) -> dict:
+                   targets: list) -> dict:
         ...
 
     @abstractmethod
