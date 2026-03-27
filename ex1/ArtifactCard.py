@@ -3,7 +3,7 @@ from ex0.Card import Card
 
 
 class ArtifactCard(Card):
-    def __init__(self, name: str, cost: int,
+    def __init__(self, name: str | Any, cost: int,
                  rarity: str, effect: str) -> None:
         self.name = name
         self.cost = cost

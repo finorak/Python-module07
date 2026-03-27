@@ -1,9 +1,9 @@
-from typing import Union
+from typing import Any, Union
 from .Card import Card
 
 
 class CreatureCard(Card):
-    def __init__(self, name: str, cost: int, rarity: str,
+    def __init__(self, name: str | Any, cost: int, rarity: str,
                  health: int, attack: int, effect: str) -> None:
         super().__init__(name, cost, rarity)
         self.health = health

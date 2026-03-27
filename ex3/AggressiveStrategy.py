@@ -11,8 +11,7 @@ class AgressiveStrategy:
         return turn_dict
 
     def get_strategy_name(self) -> str:
-        strategy_name = ""
-        return strategy_name
+        return self.__class__.__name__
 
     def prioritize_targets(self,
                            available_targets: list) -> list:
