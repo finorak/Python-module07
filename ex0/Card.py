@@ -15,10 +15,8 @@ class Card(ABC):
     def play(self, game_state: dict) -> dict:
         ...
 
-    @abstractmethod
     def get_card_info(self) -> dict:
-        ...
+        return {}
 
-    @abstractmethod
     def is_playable(self, available_mana: int) -> bool:
         return True
