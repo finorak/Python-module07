@@ -1,5 +1,5 @@
 try:
-    from . import CreatureCard
+    from .CreatureCard import CreatureCard
 except Exception as e:
     print(e)
 
